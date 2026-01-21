@@ -2,95 +2,105 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
-All colors MUST be HSL.
-*/
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&display=swap');
+
+/* Creative Portfolio Design System */
 
 @layer base {
   :root {
-    --background: 0 0% 100%;
-    --foreground: 222.2 84% 4.9%;
+    /* Warm cream background */
+    --background: 40 33% 96%;
+    --foreground: 0 0% 8%;
 
-    --card: 0 0% 100%;
-    --card-foreground: 222.2 84% 4.9%;
+    /* Cards use slightly lighter cream */
+    --card: 40 30% 98%;
+    --card-foreground: 0 0% 8%;
 
-    --popover: 0 0% 100%;
-    --popover-foreground: 222.2 84% 4.9%;
+    --popover: 40 30% 98%;
+    --popover-foreground: 0 0% 8%;
 
-    --primary: 222.2 47.4% 11.2%;
-    --primary-foreground: 210 40% 98%;
+    /* Primary - Deep charcoal black */
+    --primary: 0 0% 8%;
+    --primary-foreground: 40 33% 96%;
 
-    --secondary: 210 40% 96.1%;
-    --secondary-foreground: 222.2 47.4% 11.2%;
+    /* Secondary - Warm gray */
+    --secondary: 40 10% 90%;
+    --secondary-foreground: 0 0% 8%;
 
-    --muted: 210 40% 96.1%;
-    --muted-foreground: 215.4 16.3% 46.9%;
+    --muted: 40 10% 85%;
+    --muted-foreground: 0 0% 40%;
 
-    --accent: 210 40% 96.1%;
-    --accent-foreground: 222.2 47.4% 11.2%;
+    /* Accent - Coral/Salmon */
+    --accent: 12 76% 61%;
+    --accent-foreground: 0 0% 100%;
 
-    --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 210 40% 98%;
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
 
-    --border: 214.3 31.8% 91.4%;
-    --input: 214.3 31.8% 91.4%;
-    --ring: 222.2 84% 4.9%;
+    --border: 40 20% 88%;
+    --input: 40 20% 88%;
+    --ring: 0 0% 8%;
 
-    --radius: 0.5rem;
+    --radius: 1rem;
 
-    --sidebar-background: 0 0% 98%;
+    /* Custom accent colors for project cards */
+    --coral: 12 76% 61%;
+    --ocean: 210 70% 55%;
+    --forest: 150 50% 45%;
+    --sunshine: 45 90% 55%;
+    --grape: 280 60% 55%;
 
-    --sidebar-foreground: 240 5.3% 26.1%;
+    /* Typography */
+    --font-heading: 'Space Grotesk', sans-serif;
+    --font-body: 'Inter', sans-serif;
 
-    --sidebar-primary: 240 5.9% 10%;
-
-    --sidebar-primary-foreground: 0 0% 98%;
-
-    --sidebar-accent: 240 4.8% 95.9%;
-
-    --sidebar-accent-foreground: 240 5.9% 10%;
-
-    --sidebar-border: 220 13% 91%;
-
-    --sidebar-ring: 217.2 91.2% 59.8%;
+    --sidebar-background: 40 30% 95%;
+    --sidebar-foreground: 0 0% 8%;
+    --sidebar-primary: 0 0% 8%;
+    --sidebar-primary-foreground: 40 33% 96%;
+    --sidebar-accent: 40 10% 90%;
+    --sidebar-accent-foreground: 0 0% 8%;
+    --sidebar-border: 40 20% 88%;
+    --sidebar-ring: 0 0% 8%;
   }
 
   .dark {
-    --background: 222.2 84% 4.9%;
-    --foreground: 210 40% 98%;
+    --background: 0 0% 6%;
+    --foreground: 40 33% 96%;
 
-    --card: 222.2 84% 4.9%;
-    --card-foreground: 210 40% 98%;
+    --card: 0 0% 10%;
+    --card-foreground: 40 33% 96%;
 
-    --popover: 222.2 84% 4.9%;
-    --popover-foreground: 210 40% 98%;
+    --popover: 0 0% 10%;
+    --popover-foreground: 40 33% 96%;
 
-    --primary: 210 40% 98%;
-    --primary-foreground: 222.2 47.4% 11.2%;
+    --primary: 40 33% 96%;
+    --primary-foreground: 0 0% 8%;
 
-    --secondary: 217.2 32.6% 17.5%;
-    --secondary-foreground: 210 40% 98%;
+    --secondary: 0 0% 15%;
+    --secondary-foreground: 40 33% 96%;
 
-    --muted: 217.2 32.6% 17.5%;
-    --muted-foreground: 215 20.2% 65.1%;
+    --muted: 0 0% 20%;
+    --muted-foreground: 40 10% 60%;
 
-    --accent: 217.2 32.6% 17.5%;
-    --accent-foreground: 210 40% 98%;
+    --accent: 12 76% 61%;
+    --accent-foreground: 0 0% 100%;
 
-    --destructive: 0 62.8% 30.6%;
-    --destructive-foreground: 210 40% 98%;
+    --destructive: 0 62% 30%;
+    --destructive-foreground: 40 33% 96%;
 
-    --border: 217.2 32.6% 17.5%;
-    --input: 217.2 32.6% 17.5%;
-    --ring: 212.7 26.8% 83.9%;
-    --sidebar-background: 240 5.9% 10%;
-    --sidebar-foreground: 240 4.8% 95.9%;
-    --sidebar-primary: 224.3 76.3% 48%;
-    --sidebar-primary-foreground: 0 0% 100%;
-    --sidebar-accent: 240 3.7% 15.9%;
-    --sidebar-accent-foreground: 240 4.8% 95.9%;
-    --sidebar-border: 240 3.7% 15.9%;
-    --sidebar-ring: 217.2 91.2% 59.8%;
+    --border: 0 0% 20%;
+    --input: 0 0% 20%;
+    --ring: 40 33% 96%;
+
+    --sidebar-background: 0 0% 8%;
+    --sidebar-foreground: 40 33% 96%;
+    --sidebar-primary: 40 33% 96%;
+    --sidebar-primary-foreground: 0 0% 8%;
+    --sidebar-accent: 0 0% 15%;
+    --sidebar-accent-foreground: 40 33% 96%;
+    --sidebar-border: 0 0% 20%;
+    --sidebar-ring: 40 33% 96%;
   }
 }
 
@@ -100,6 +110,55 @@ All colors MUST be HSL.
   }
 
   body {
-    @apply bg-background text-foreground;
+    @apply bg-background text-foreground font-body;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-heading);
+  }
+}
+
+@layer components {
+  .hero-title {
+    @apply text-6xl md:text-8xl lg:text-9xl font-bold tracking-tighter;
+    font-family: var(--font-heading);
+  }
+
+  .section-title {
+    @apply text-xs font-semibold uppercase tracking-widest text-muted-foreground;
+  }
+
+  .project-card {
+    @apply rounded-2xl p-6 transition-transform duration-300 hover:scale-105;
+  }
+
+  .project-card-coral {
+    background-color: hsl(var(--coral));
+  }
+
+  .project-card-ocean {
+    background-color: hsl(var(--ocean));
+  }
+
+  .project-card-forest {
+    background-color: hsl(var(--forest));
+  }
+
+  .project-card-sunshine {
+    background-color: hsl(var(--sunshine));
+  }
+
+  .project-card-grape {
+    background-color: hsl(var(--grape));
+  }
+}
+
+@layer utilities {
+  .font-heading {
+    font-family: var(--font-heading);
+  }
+
+  .font-body {
+    font-family: var(--font-body);
   }
 }
